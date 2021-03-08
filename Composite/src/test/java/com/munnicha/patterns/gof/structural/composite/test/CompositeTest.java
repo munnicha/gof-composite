@@ -36,4 +36,10 @@ public class CompositeTest {
         assertEquals(3,rightPicture.getChildren().size());
         assertEquals(4,topRightPicture.getChildren().size());
     }
+    
+    @Test(expected=UnsupportedOperationException.class)
+    public void testCompositeException(){
+        Graphic leafLine = new Line();
+        leafLine.add(new Text());
+    }
 }
